@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 
 public class NewChar {
-
 	public static void main(String[] args) {
 		Boolean program_end = false;
 
@@ -49,6 +48,7 @@ public class NewChar {
 				}
 
 			}
+		scan.close();
 		}
 
 	}
