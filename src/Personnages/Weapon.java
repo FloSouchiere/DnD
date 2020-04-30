@@ -17,6 +17,6 @@ public class Weapon {
 		return this.name;
 	}
 
-	public static Weapon fistmourne = new Weapon(5, "Fistmourne slayer of Uranus");
-	public static Weapon excaliburne = new Weapon(7, "Excaliburne, Balls destructor");
+	public static Weapon fistmourne = new Weapon(5, "Fistmourne, slayer of Uranus");
+	public static Weapon excaliburne = new Weapon(7, "Excaliburne, crotch destroyer");
 }
