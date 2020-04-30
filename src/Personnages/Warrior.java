@@ -17,7 +17,6 @@ public class Warrior extends Character {
 		this.strength = strength;
 		this.weapon = weapon;
 		this.shield = shield;
-
 	}
 	
 	public String toString() {
