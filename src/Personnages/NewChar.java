@@ -3,6 +3,8 @@ package Personnages;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+/** Define of meaningful constants used to randomly set the life and strength attributes of each character.*/
+
 public class NewChar {
 	public static final int MAX_LIFE_WARRIOR = 10;
 	public static final int MIN_LIFE_WARRIOR = 5;
@@ -13,6 +15,11 @@ public class NewChar {
 	public static final int MIN_STRENGTH_WIZARD = 8;
 	public static final int MAX_STRENGTH_WIZARD = 15;
 
+/** Creation and addition of a new character in a list of characters
+ * Loops for as long as we need to add either a Warrior or Wizard Character to the game's list of characters
+ * by calling createWarrior() or createWizard() after setting the parameters such as name..
+ * Once done, ends with the display of all characters' specs by calling display_charlist()*/
+	
 	public static void main(String[] args) {
 		
 		Boolean program_end = false;
@@ -49,6 +56,10 @@ public class NewChar {
 		displayCharList(char_list);
 	}
 
+/** Displays the Characters' list
+* Loops in the Characters list to display each element using the Console, and using the parameter:
+* @Param char_list		Allows to display all attributes using the toString method for each elements */
+	
 	private static void displayCharList(ArrayList<Character> char_list) {
 		
 		System.out.println("\n====== Présentation =======");
@@ -59,6 +70,12 @@ public class NewChar {
 		System.out.println("\n\n====== END =======");
 	}
 
+/** Creation of a new Character "Wizard" 
+* This new Character is automatically stored in an ArrayList, is set using some user inputs, including:
+* @Param char_list		ArrayList where the new Character is added
+* @Param scan			input used to choose spell
+* @Param char_name		sets the Character's name prior to addition in the list */
+	
 	private static void createWizard(ArrayList<Character> char_list, Scanner scan, String char_name) {
 		
 		int input;
@@ -85,7 +102,12 @@ public class NewChar {
 		char_list.add(tmp_wizard);
 		System.out.println(tmp_wizard.getName() + " added.\n");
 	}
-
+/** Creation of a new Character "Warrior" 
+ * This new Character is automatically stored in an ArrayList, is set using some user inputs, including:
+ * @Param char_list		ArrayList where the new Character is added
+ * @Param scan			input used to choose weapon
+ * @Param char_name		sets the Character's name prior to addition in the list */
+	
 	private static void createWarrior(ArrayList<Character> char_list, Scanner scan, String char_name) {
 		
 		int input;
