@@ -19,12 +19,12 @@ public class Warrior extends Character {
 		this.shield = shield;
 	}
 
-	public String get_name() {
+	public String getName() {
 		return this.name+" the SocialJusticeWarrior";
 	}
 
 	public String toString() {
-		return ("I'm " + this.get_name()+"\ni can use " + weapon.get_name() + " and a " + this.shield
+		return ("I'm " + this.getName()+"\ni can use " + weapon.getName() + " and a " + this.shield
 				+ "\nhere's my BIG attributes...\nLIFE : " + this.getLife() + "\nSTRENGTH : " + this.getStrength());
 	}
 

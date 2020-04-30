@@ -1,11 +1,12 @@
 package Personnages;
 
 public class Character {
+
 	String name;
 	String img_url;
 	int life;
 	int strength;
-	
+
 	public int getLife() {
 		return this.life;
 	}
@@ -13,6 +14,4 @@ public class Character {
 	public int getStrength() {
 		return this.strength;
 	}
-
-
 }

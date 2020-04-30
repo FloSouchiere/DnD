@@ -19,12 +19,12 @@ public class Wizard extends Character {
 		this.philter = philter;
 	}
 	
-	public String get_name() {
+	public String getName() {
 		return this.name+" the Jizzhard";
 	}
 
 	public String toString() {
-		return ("I'm " + this.get_name()+"\ni can cast " + spell.get_name() + " and drink a " + this.philter
+		return ("I'm " + this.getName()+"\ni can cast " + spell.getName() + " and drink a " + this.philter
 				+ "\nhere's my BIG attributes...\nLIFE : " + this.getLife() + "\nSTRENGTH : " + this.getStrength());
 	}
 

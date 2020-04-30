@@ -9,11 +9,11 @@ public class Spell {
 		this.name = name;
 	}
 
-	public int get_bonus_dmg() {
+	public int getBonusDamage() {
 		return this.dmg_bonus;
 	}
 	
-	public String get_name() {
+	public String getName() {
 		return this.name;
 	}
 
