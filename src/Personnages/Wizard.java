@@ -17,13 +17,29 @@ public class Wizard extends Character {
 	}
 	
 	public String getName() {
-		String str = super.getName()+" the Jizzhard";
+		String str = super.getSimpleName()+" the Jizzhard";
 		return str;
 	}
 
 	public String toString() {
 		return ("I'm " + this.getName()+"\ni can cast " + spell.getName() + " and drink a " + this.philter
 				+ super.toString());
+	}
+	
+	public void setSpell(Spell spell) {
+		this.spell = spell;
+	}
+
+	public String getSpell() {
+		return this.spell.getName();
+	}
+
+	public void setPhilter(String philter) {
+		this.philter = philter;
+	}
+
+	public String getPhilter() {
+		return this.philter;
 	}
 
 }

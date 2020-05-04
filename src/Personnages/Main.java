@@ -7,34 +7,37 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-
 		ArrayList<Character> charList = new ArrayList<>();
+		NewChar charCreation = new NewChar();
+		ModifChar pimpMyChar = new ModifChar();
 		Boolean program_end = false;
 		Scanner scan = new Scanner(System.in);
 		while (!program_end) {
 			int input = 0;
 			try {
-				System.out.println("Choose action : Quit = 1, Add = 2");
+				System.out.println("\nChoose action : Quit = 1, Add = 2, Pimp your character = 3");
 				input = scan.nextInt();
 				scan.nextLine();
 			} catch (InputMismatchException err) {
-				System.out.println("WE SAID 1 OR 2 !");
+				System.out.println("\nWE SAID 1, 2 OR 3 !");
 				scan.next();
 			}
 			if (input == 2) {
-				charList = NewChar.create(charList, scan);
+				charCreation.create(charList, scan);
 			} else if (input == 1) {
 				program_end = true;
+			} else if (input == 3) {
+				pimpMyChar.modification(charList, scan);
 			}
 		}
 		scan.close();
-		displayChar_list(charList);
+		displaycharList(charList);
 	}
 
-	static void displayChar_list(ArrayList<Character> charList) {
+	static void displaycharList(ArrayList<Character> charList) {
 		System.out.println("\n====== PRESENTATION =======");
-		for (Character pignouf : charList) {
-			System.out.println("\n\n" + pignouf.toString());
+		for (Character character : charList) {
+			System.out.println("\n\n" + character.toString());
 		}
 		System.out.println("\n\n====== END =======");
 	}

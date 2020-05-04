@@ -21,12 +21,20 @@ abstract class Character {
 		return this.strength;
 	}
 	
-	public String getName() {
-		return this.name;
+//	public String getName() {
+//		return this.name;
+//	}
+	
+	public void setName(String new_name) {
+		this.name = new_name;
 	}
 	
 	public void setLife(int new_life) {
 		this.life = new_life;
+	}
+	
+	public String getSimpleName() {
+		return this.name;
 	}
 	
 	public String toString() {

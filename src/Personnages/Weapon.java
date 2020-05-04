@@ -6,6 +6,6 @@ public class Weapon  extends Stuff {
 		super(dmg, name);
 	}
 
-	public static Weapon fistmourne = new Weapon(5, "Fistmourne, slayer of Uranus");
-	public static Weapon excaliburne = new Weapon(7, "Excaliburne, crotch destroyer");
+	public static Weapon frostmourne = new Weapon(5, "Fistmourne, slayer of Uranus");
+	public static Weapon excalibur = new Weapon(7, "Excaliburne, crotch destroyer");
 }

@@ -14,15 +14,30 @@ public class Warrior extends Character {
 		this.weapon = weapon;
 		this.shield = shield;
 	}
-	
+
 	public String getName() {
-		String str = super.getName()+" the Social Justice Warrior";
+		String str = super.getSimpleName() + " the Social Justice Warrior";
 		return str;
 	}
 
 	public String toString() {
-		return ("I'm "+ this.getName()+"\ni can use " + weapon.getName() + " and a " + this.shield
+		return ("I'm " + this.getName() + "\ni can use " + this.weapon.getName() + " and a " + this.shield
 				+ super.toString());
 	}
 
+	public void setWeapon(Weapon weapon) {
+		this.weapon = weapon;
+	}
+
+	public String getWeapon() {
+		return this.weapon.getName();
+	}
+
+	public void setShield(String shield) {
+		this.shield = shield;
+	}
+
+	public String getShield() {
+		return this.shield;
+	}
 }
