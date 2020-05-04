@@ -10,22 +10,19 @@ public class Warrior extends Character {
 	// Constructor
 
 	public Warrior(String name, String url, int life, int strength, Weapon weapon, String shield) {
-
-		this.name = name;
-		this.img_url = url;
-		this.life = life;
-		this.strength = strength;
+		super(name, url, life, strength);
 		this.weapon = weapon;
 		this.shield = shield;
 	}
-
-	public String get_name() {
-		return this.name+" the SocialJusticeWarrior";
+	
+	public String getName() {
+		String str = super.getName()+" the Social Justice Warrior";
+		return str;
 	}
 
 	public String toString() {
-		return ("I'm " + this.get_name()+"\ni can use " + weapon.get_name() + " and a " + this.shield
-				+ "\nhere's my BIG attributes...\nLIFE : " + this.getLife() + "\nSTRENGTH : " + this.getStrength());
+		return ("I'm "+ this.getName()+"\ni can use " + weapon.getName() + " and a " + this.shield
+				+ super.toString());
 	}
 
 }
