@@ -1,7 +1,10 @@
 package Personnages;
 
-/** As its equivalent Wizard Class, Warrior class is sub to Character to allow Characters to be stored in a list.
- * It polymorphes Character, adding its own weaponry and accessories.*/
+/**
+ * As its equivalent Wizard Class, Warrior class is sub to Character to allow
+ * Characters to be stored in a list. It polymorphes Character, adding its own
+ * weaponry and accessories.
+ */
 
 public class Warrior extends Character {
 
@@ -9,9 +12,17 @@ public class Warrior extends Character {
 
 	private Weapon weapon;
 	private String shield;
-	
-	// Constructor
 
+	// Constructor
+	/**
+	 * 
+	 * @param name
+	 * @param url
+	 * @param life
+	 * @param strength
+	 * @param weapon
+	 * @param shield
+	 */
 	public Warrior(String name, String url, int life, int strength, Weapon weapon, String shield) {
 		super(name, url, life, strength);
 		this.weapon = weapon;
@@ -22,15 +33,21 @@ public class Warrior extends Character {
 		String str = super.getSimpleName() + " the Social Justice Warrior";
 		return str;
 	}
-	
-/** Intended to ease the console display of the characters' list elements and appear
- * as nice and complete as possible.*/
+
+	/**
+	 * Intended to ease the console display of the characters' list elements and
+	 * appear as nice and complete as possible.
+	 */
 
 	public String toString() {
 		return ("I'm " + this.getName() + "\ni can use " + this.weapon.getName() + " and a " + this.shield
 				+ super.toString());
 	}
 
+	/**
+	 * 
+	 * @param weapon
+	 */
 	public void setWeapon(Weapon weapon) {
 		this.weapon = weapon;
 	}

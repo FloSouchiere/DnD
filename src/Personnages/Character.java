@@ -5,7 +5,7 @@ package Personnages;
  * methods.
  */
 
-abstract class Character {
+public abstract class Character {
 	private String name;
 	private String img_url;
 	private int life;
@@ -50,7 +50,7 @@ abstract class Character {
 	public String getSimpleName() {
 		return this.name;
 	}
-	
+
 	public String toString() {
 		return ("\nhere's my BIG attributes...\nLIFE : " + this.getLife() + "\nSTRENGTH : " + this.getStrength());
 	}

@@ -1,4 +1,5 @@
-package Personnages;
+package Main;
+
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -7,9 +8,9 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		ArrayList<Character> charList = new ArrayList<>();
-		NewChar charCreation = new NewChar();
-		ModifChar pimpMyChar = new ModifChar();
+		ArrayList<Personnages.Character> charList = new ArrayList<>();
+		Personnages.NewChar charCreation = new Personnages.NewChar();
+		Personnages.ModifChar pimpMyChar = new Personnages.ModifChar();
 		Boolean program_end = false;
 		Scanner scan = new Scanner(System.in);
 		while (!program_end) {
@@ -38,9 +39,9 @@ public class Main {
 * Loops in the Characters list to display each element using the Console, and using the parameter:
 * @Param char_list		Allows to display all attributes using the toString method for each elements */
 	
-	static void displaycharList(ArrayList<Character> charList) {
+	static void displaycharList(ArrayList<Personnages.Character> charList) {
 		System.out.println("\n====== PRESENTATION =======");
-		for (Character character : charList) {
+		for (Personnages.Character character : charList) {
 			System.out.println("\n\n" + character.toString());
 		}
 		System.out.println("\n\n====== END =======");
