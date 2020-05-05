@@ -53,4 +53,11 @@ public abstract class Character {
 	public String toString() {
 		return ("\nhere's my BIG attributes...\nLIFE : " + this.getLife() + "\nSTRENGTH : " + this.getStrength());
 	}
+	
+	public void setPrimary(Stuff stuff) {		
+	}
+	
+	public void setAccessory(String acc) {
+	}
+
 }

@@ -18,6 +18,11 @@ public class Wizard extends Character {
 		this.philter = philter;
 	}
 	
+	public Wizard(String name, String url, int life, int strength) {
+		super(name, url, life, strength);
+	}
+
+	
 	public String getName() {
 		String str = super.getSimpleName()+" the Jizzhard";
 		return str;
@@ -35,15 +40,15 @@ public class Wizard extends Character {
 				+ super.toString());
 	}
 	
-	public void setSpell(Spell spell) {
-		this.spell = spell;
+	public void setPrimary(Stuff spell) {
+		this.spell = (Spell) spell;
 	}
 
 	public Spell getSpell() {
 		return this.spell;
 	}
 
-	public void setPhilter(String philter) {
+	public void setAccessory(String philter) {
 		this.philter = philter;
 	}
 

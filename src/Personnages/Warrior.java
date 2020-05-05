@@ -28,6 +28,10 @@ public class Warrior extends Character {
 		this.weapon = weapon;
 		this.shield = shield;
 	}
+	
+	public Warrior(String name, String url, int life, int strength) {
+		super(name, url, life, strength);
+	}
 
 	public String getName() {
 		String str = super.getSimpleName() + " the Social Justice Warrior";
@@ -48,15 +52,15 @@ public class Warrior extends Character {
 	 * 
 	 * @param weapon
 	 */
-	public void setWeapon(Weapon weapon) {
-		this.weapon = weapon;
+	public void setPrimary(Stuff stuff) {
+		this.weapon = (Weapon) stuff;
 	}
 
 	public Weapon getWeapon() {
 		return this.weapon;
 	}
 
-	public void setShield(String shield) {
+	public void setAccessory(String shield) {
 		this.shield = shield;
 	}
 

@@ -1,11 +1,13 @@
 package Main;
 
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
+	private enum main_input {
+		QUIT, CREATION, MODIFY, DISPLAY, NONE
+	};
 
 	public static void main(String[] args) {
 		ArrayList<Personnages.Character> charList = new ArrayList<>();
@@ -14,31 +16,45 @@ public class Main {
 		Boolean program_end = false;
 		Scanner scan = new Scanner(System.in);
 		while (!program_end) {
-			int input = 0;
+			main_input input = main_input.NONE;
 			try {
-				System.out.println("\nChoose action : Quit = 1, Add = 2, Pimp your character = 3");
-				input = scan.nextInt();
+				System.out.println("\nChoose action : Quit = 0, Add = 1, Pimp your character = 2, Display characters = 3");
+				input = main_input.values()[scan.nextInt()];
 				scan.nextLine();
 			} catch (InputMismatchException err) {
 				System.out.println("\nWE SAID 1, 2 OR 3 !");
 				scan.next();
+			} catch (ArrayIndexOutOfBoundsException err) {
+				System.out.println("\nAGAIN, HE DISAPPOINT US...");
 			}
-			if (input == 2) {
+			switch (input) {
+			case CREATION:
 				charCreation.create(charList, scan);
-			} else if (input == 1) {
+				break;
+			case QUIT:
 				program_end = true;
-			} else if (input == 3) {
+				break;
+			case MODIFY:
 				pimpMyChar.modification(charList, scan);
+				break;
+			case DISPLAY:
+				displaycharList(charList);
+				break;
+			default:
 			}
 		}
 		scan.close();
 		displaycharList(charList);
 	}
 
-/** Displays the Characters' list
-* Loops in the Characters list to display each element using the Console, and using the parameter:
-* @Param char_list		Allows to display all attributes using the toString method for each elements */
-	
+	/**
+	 * Displays the Characters' list Loops in the Characters list to display each
+	 * element using the Console, and using the parameter:
+	 * 
+	 * @Param char_list Allows to display all attributes using the toString method
+	 *        for each elements
+	 */
+
 	static void displaycharList(ArrayList<Personnages.Character> charList) {
 		System.out.println("\n====== PRESENTATION =======");
 		for (Personnages.Character character : charList) {

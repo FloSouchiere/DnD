@@ -5,6 +5,11 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class ModifChar {
+	private enum modify_input {
+		QUIT, NAME, STUFF, DELETE, NONE
+	};
+	private static final int FIRST_CHOICE = 1;
+	private static final int SECOND_CHOICE = 2;	
 
 	public void modification(ArrayList<Character> charList, Scanner scan) {
 		if (charList.size() == 0) {
@@ -13,25 +18,22 @@ public class ModifChar {
 			int selected_index;
 			selected_index = selectIndex(charList, scan);
 			NewChar selectStuff = new NewChar();
-			int input;
+			modify_input input = modify_input.NONE;
 			System.out.println("\nChange : Cancel = 0, Name = 1, Stuff = 2, GTFO = 3");
-			input = scan.nextInt();
+			input = modify_input.values()[scan.nextInt()];
 			scan.nextLine();
-			if (input != 0) {
-				if (input == 1) {
+			if (input != modify_input.QUIT) {
+				switch (input) {
+				case NAME:
 					changeName(scan, charList.get(selected_index));
-				}
-				if (input == 2) {
-					if (charList.get(selected_index).getClass() == Warrior.class) {
-						modifyWarrior(scan, selectStuff, charList.get(selected_index));
-					} else if (charList.get(selected_index).getClass() == Wizard.class) {
-						modifyWizard(scan, selectStuff, charList.get(selected_index));
-					}
-				}
-				if (input == 3) {
+					break;
+				case STUFF:
+					modifyCharacter(scan, selectStuff, charList.get(selected_index));
+					break;
+				case DELETE:
 					charList.remove(charList.get(selected_index));
+				default:
 				}
-
 			}
 		}
 	}
@@ -69,35 +71,19 @@ public class ModifChar {
 		character.setName(new_name);
 	}
 
-	private void modifyWizard(Scanner scan, NewChar selectStuff, Character character) {
+	private void modifyCharacter(Scanner scan, NewChar selectStuff, Character character) {
 		int input;
-		System.out.println("\nChange : Spell = 1, Philter = 2");
+		System.out.println("\nChange : Primary = 1, Accessory = 2");
 		input = scan.nextInt();
 		scan.nextLine();
-		if (input == 1) {
-			Spell selected_spell = selectStuff.selectSpell(scan);
-			((Wizard) character).setSpell(selected_spell);
+		if (input == FIRST_CHOICE) {
+			Stuff selected_primary = selectStuff.selectPrimary(character, scan);
+			character.setPrimary(selected_primary);
 		}
-		if (input == 2) {
-			System.out.println("\nType a philter");
-			String new_philter = scan.nextLine();
-			((Wizard) character).setPhilter(new_philter);
-		}
-	}
-
-	private void modifyWarrior(Scanner scan, NewChar selectStuff, Character character) {
-		int input;
-		System.out.println("\nChange : Weapon = 1, Shield = 2");
-		input = scan.nextInt();
-		scan.nextLine();
-		if (input == 1) {
-			Weapon selected_weap = selectStuff.selectWeapon(scan);
-			((Warrior) character).setWeapon(selected_weap);
-		}
-		if (input == 2) {
-			System.out.println("\nType a shield");
-			String new_shield = scan.nextLine();
-			((Warrior) character).setShield(new_shield);
+		if (input == SECOND_CHOICE) {
+			System.out.println("\nType a accessory");
+			String new_accessory = scan.nextLine();
+			character.setAccessory(new_accessory);			
 		}
 	}
 
