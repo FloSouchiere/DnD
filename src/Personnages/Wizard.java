@@ -13,22 +13,42 @@ public class Wizard extends Character {
 	// Constructor
 
 	public Wizard(String name, String url, int life, int strength, Spell spell, String philter) {
-
-		this.name = name;
-		this.img_url = url;
-		this.life = life;
-		this.strength = strength;
+		super(name, url, life, strength);
 		this.spell = spell;
 		this.philter = philter;
 	}
+	
+	public String getName() {
+		String str = super.getSimpleName()+" the Jizzhard";
+		return str;
+	}
+	
+/** Intended to ease the console display of the characters' list elements and appear
+* as nice and complete as possible.*/
 
-
+  
 /** Intended to ease the console display of the characters' list elements and appear
 * as nice and complete as possible.*/
 	
 	public String toString() {
 		return ("I'm " + this.getName()+"\ni can cast " + spell.getName() + " and drink a " + this.philter
-				+ "\nhere's my BIG attributes...\nLIFE : " + this.getLife() + "\nSTRENGTH : " + this.getStrength());
+				+ super.toString());
+	}
+	
+	public void setSpell(Spell spell) {
+		this.spell = spell;
+	}
+
+	public Spell getSpell() {
+		return this.spell;
+	}
+
+	public void setPhilter(String philter) {
+		this.philter = philter;
+	}
+
+	public String getPhilter() {
+		return this.philter;
 	}
 
 }
