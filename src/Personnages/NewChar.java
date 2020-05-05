@@ -33,6 +33,12 @@ public class NewChar {
 			createWizard(charList, scan, char_name);
 		}
 	}
+	
+/** Creation of a new Character "Wizard" 
+* This new Character is automatically stored in an ArrayList, is set using some user inputs, including:
+* @Param char_list		ArrayList where the new Character is added
+* @Param scan			input used to choose spell
+* @Param char_name		sets the Character's name prior to addition in the list */
 
 	private void createWizard(ArrayList<Character> charList, Scanner scan, String char_name) {
 		int life_pts_rdm = (MIN_LIFE_WIZARD + (int) (Math.random() * ((MAX_LIFE_WIZARD - MIN_LIFE_WIZARD) + 1)));
@@ -43,6 +49,12 @@ public class NewChar {
 		charList.add(tmp_wizard);
 		System.out.println(tmp_wizard.getSimpleName() + " added.\n");
 	}
+	
+/** Creation of a new Character "Warrior" 
+ * This new Character is automatically stored in an ArrayList, is set using some user inputs, including:
+ * @Param char_list		ArrayList where the new Character is added
+ * @Param scan			input used to choose weapon
+ * @Param char_name		sets the Character's name prior to addition in the list */
 
 	private void createWarrior(ArrayList<Character> charList, Scanner scan, String char_name) {
 		int life_pts_rdm = (MIN_LIFE_WARRIOR + (int) (Math.random() * ((MAX_LIFE_WARRIOR - MIN_LIFE_WARRIOR) + 1)));
