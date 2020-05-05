@@ -1,5 +1,8 @@
 package Personnages;
 
+/** Class whose purpose is to list every available weapon and related specs for super methods/classes.
+ * Specs so far are : name, damage.*/
+
 public class Weapon  extends Stuff {
 
 	private Weapon(int dmg, String name) {
