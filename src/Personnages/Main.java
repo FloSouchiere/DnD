@@ -34,6 +34,10 @@ public class Main {
 		displaycharList(charList);
 	}
 
+/** Displays the Characters' list
+* Loops in the Characters list to display each element using the Console, and using the parameter:
+* @Param char_list		Allows to display all attributes using the toString method for each elements */
+	
 	static void displaycharList(ArrayList<Character> charList) {
 		System.out.println("\n====== PRESENTATION =======");
 		for (Character character : charList) {
