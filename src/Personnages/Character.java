@@ -1,5 +1,4 @@
 package Personnages;
-
 /**
  * Creation of the SuperClass "Character" and the common attributes and get/set
  * methods.
