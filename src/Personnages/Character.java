@@ -1,5 +1,10 @@
 package Personnages;
 
+/**
+ * Creation of the SuperClass "Character" and the common attributes and get/set
+ * methods.
+ */
+
 abstract class Character {
 	private String name;
 	private String img_url;
@@ -21,6 +26,11 @@ abstract class Character {
 		return this.strength;
 	}
 	
+	/**
+	 * Allows the display of the Character's name plus a fancy description, not
+	 * touching the toString method.
+	 */
+	
 //	public String getName() {
 //		return this.name;
 //	}
@@ -28,6 +38,10 @@ abstract class Character {
 	public void setName(String new_name) {
 		this.name = new_name;
 	}
+	/**
+	 * Intended to ease the console display of the characters' list elements and
+	 * appear as nice and complete as possible.
+	 */
 	
 	public void setLife(int new_life) {
 		this.life = new_life;
