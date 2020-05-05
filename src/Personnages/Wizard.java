@@ -26,6 +26,10 @@ public class Wizard extends Character {
 /** Intended to ease the console display of the characters' list elements and appear
 * as nice and complete as possible.*/
 
+  
+/** Intended to ease the console display of the characters' list elements and appear
+* as nice and complete as possible.*/
+	
 	public String toString() {
 		return ("I'm " + this.getName()+"\ni can cast " + spell.getName() + " and drink a " + this.philter
 				+ super.toString());
