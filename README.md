@@ -1,7 +1,7 @@
 # DnD
 
 ```Project based on a Dungeon and Dragons game.
-At the moment, the main at root and a package "Personnages" which is being implemented
+At the moment, the main, upper in the hierarchy, and a package "Personnages" which is being implemented
 in order to create characters and add them to an arraylist.
 ```
 ## Package "Personnages" :
