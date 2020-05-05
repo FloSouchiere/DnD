@@ -18,9 +18,9 @@ public class Stuff {
 	
 /** Getter of the spell's name :
  * @return String of the name of the spell.*/
-
 	
 	public String getName() {
 		return this.name;
 	}
+	
 }
