@@ -7,8 +7,6 @@ public class Warrior extends Character {
 	private Weapon weapon;
 	private String shield;
 
-	// Constructor
-
 	public Warrior(String name, String url, int life, int strength, Weapon weapon, String shield) {
 		super(name, url, life, strength);
 		this.weapon = weapon;
@@ -29,8 +27,8 @@ public class Warrior extends Character {
 		this.weapon = weapon;
 	}
 
-	public String getWeapon() {
-		return this.weapon.getName();
+	public Weapon getWeapon() {
+		return this.weapon;
 	}
 
 	public void setShield(String shield) {

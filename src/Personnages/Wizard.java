@@ -10,7 +10,6 @@ public class Wizard extends Character {
 	// Constructor
 
 	public Wizard(String name, String url, int life, int strength, Spell spell, String philter) {
-
 		super(name, url, life, strength);
 		this.spell = spell;
 		this.philter = philter;
@@ -30,8 +29,8 @@ public class Wizard extends Character {
 		this.spell = spell;
 	}
 
-	public String getSpell() {
-		return this.spell.getName();
+	public Spell getSpell() {
+		return this.spell;
 	}
 
 	public void setPhilter(String philter) {
