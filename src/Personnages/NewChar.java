@@ -3,6 +3,8 @@ package Personnages;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+/** Define of meaningful constants used to randomly set the life and strength attributes of each character.*/
+
 public class NewChar {
 	private static final int MAX_LIFE_WARRIOR = 10;
 	private static final int MIN_LIFE_WARRIOR = 5;
@@ -12,6 +14,11 @@ public class NewChar {
 	private static final int MIN_LIFE_WIZARD = 3;
 	private static final int MIN_STRENGTH_WIZARD = 8;
 	private static final int MAX_STRENGTH_WIZARD = 15;
+	
+/** Creation and addition of a new character in a list of characters
+ * Loops for as long as we need to add either a Warrior or Wizard Character to the game's list of characters
+ * by calling createWarrior() or createWizard() after setting the parameters such as name..
+ * Once done, ends with the display of all characters' specs by calling display_charlist()*/
 
 	public void create(ArrayList<Character> charList, Scanner scan) {
 		int input = 0;
