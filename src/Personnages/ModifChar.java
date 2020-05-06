@@ -6,32 +6,40 @@ import java.util.InputMismatchException;
 
 public class ModifChar {
 	private enum modify_input {
-		QUIT, NAME, STUFF, DELETE, NONE
+		QUIT, NAME, STUFF, DELETE, SHOW, NONE
 	};
+
 	private static final int FIRST_CHOICE = 1;
-	private static final int SECOND_CHOICE = 2;	
+	private static final int SECOND_CHOICE = 2;
 
 	public void modification(ArrayList<Character> charList, Scanner scan) {
 		if (charList.size() == 0) {
 			System.out.println("HA HA ! YOU'RE ALONE !");
 		} else {
 			int selected_index;
-			selected_index = selectIndex(charList, scan);
-			NewChar selectStuff = new NewChar();
 			modify_input input = modify_input.NONE;
-			System.out.println("\nChange : Cancel = 0, Name = 1, Stuff = 2, GTFO = 3");
+
+			selected_index = selectIndex(charList, scan);
+			Character selected_char = charList.get(selected_index);
+
+			System.out.println("\nChange : Cancel = 0, Name = 1, Stuff = 2, GTFO = 3, Show Stats = 4");
 			input = modify_input.values()[scan.nextInt()];
 			scan.nextLine();
+
 			if (input != modify_input.QUIT) {
 				switch (input) {
 				case NAME:
-					changeName(scan, charList.get(selected_index));
+					changeName(scan, selected_char);
 					break;
 				case STUFF:
-					modifyCharacter(scan, selectStuff, charList.get(selected_index));
+					modifyCharacter(scan, selected_char);
 					break;
 				case DELETE:
-					charList.remove(charList.get(selected_index));
+					charList.remove(selected_char);
+					break;
+				case SHOW:
+					System.out.println(selected_char.toString());
+					break;
 				default:
 				}
 			}
@@ -71,8 +79,9 @@ public class ModifChar {
 		character.setName(new_name);
 	}
 
-	private void modifyCharacter(Scanner scan, NewChar selectStuff, Character character) {
+	private void modifyCharacter(Scanner scan, Character character) {
 		int input;
+		NewChar selectStuff = new NewChar();
 		System.out.println("\nChange : Primary = 1, Accessory = 2");
 		input = scan.nextInt();
 		scan.nextLine();
@@ -83,7 +92,7 @@ public class ModifChar {
 		if (input == SECOND_CHOICE) {
 			System.out.println("\nType a accessory");
 			String new_accessory = scan.nextLine();
-			character.setAccessory(new_accessory);			
+			character.setAccessory(new_accessory);
 		}
 	}
 
