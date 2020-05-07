@@ -88,6 +88,16 @@ public class NewChar {
 		character.setAccessory(new_accessory);
 	}
 
+	/**
+	 * 
+	 * Invisible do/while method for the player, used to link the character's type and the
+	 * stuff proposed on the next method.
+	 * 
+	 * @param character
+	 * @param scan
+	 * @return
+	 */
+
 	public Stuff selectPrimary(Character character, Scanner scan) {
 		Stuff tmp_stuff = null;
 		do {

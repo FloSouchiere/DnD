@@ -12,6 +12,8 @@ public class Stuff {
 		this.name = name;
 	}
 	
+	public Stuff () {}
+	
 	public int getBonusDmg() {
 		return this.dmg_bonus;
 	}

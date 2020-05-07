@@ -4,13 +4,17 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import GameBoard.Boardcase;
+
 public class Main {
 	private enum main_input {
-		QUIT, CREATION, MODIFY, DISPLAY, NONE
+		QUIT, CREATION, MODIFY, DISPLAY, SHOW_BOARD, NONE
 	};
 
 	public static void main(String[] args) {
 		ArrayList<Personnages.Character> charList = new ArrayList<>();
+		ArrayList <GameBoard.Boardcase> board = new ArrayList<Boardcase>();
+		GameBoard.Board.initBoard(board);
 		Personnages.NewChar charCreation = new Personnages.NewChar();
 		Personnages.ModifChar pimpMyChar = new Personnages.ModifChar();
 		Boolean program_end = false;
@@ -18,7 +22,7 @@ public class Main {
 		while (!program_end) {
 			main_input input = main_input.NONE;
 			try {
-				System.out.println("\nChoose action : Quit = 0, Add = 1, Pimp your character = 2, Display characters = 3");
+				System.out.println("\nChoose action : Quit = 0, Add = 1, Pimp your character = 2, Display characters = 3, Show board = 4");
 				input = main_input.values()[scan.nextInt()];
 				scan.nextLine();
 			} catch (InputMismatchException err) {
@@ -40,6 +44,8 @@ public class Main {
 			case DISPLAY:
 				displaycharList(charList);
 				break;
+			case SHOW_BOARD:
+				GameBoard.Displayboard.display(board);
 			default:
 			}
 		}
